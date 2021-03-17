@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import java.beans.ConstructorProperties;
 import java.util.Optional;
@@ -71,7 +72,10 @@ public class UserServiceImpl implements UserService {
         //...
     }
 
-
+    @PostConstruct
+    void populateCache() {
+        //캐시등록
+    }
 
 
 
